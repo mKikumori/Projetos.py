@@ -26,3 +26,5 @@
                 dealer_cards.append(card_possible)
                 if len(dealer_cards) == 2:
                     print("Dealer has: _ and", dealer_cards[1])
+                    
+                    
