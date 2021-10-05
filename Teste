@@ -9,7 +9,7 @@ import random
     pergunta_secreta = perguntas[numero].upper()
     
     
-    respostas = ["Ácido carboxílico", "Cetona", "Aldeido", "Éster", "Éter"]
+    respostas = ["Amida", "Cetona", "Amina", "Éster", "Éter"]
     
     resposta1 = [perguntas,0] == [respostas,0]
     resposta2 = [perguntas,1] == [respostas,1]
@@ -17,7 +17,8 @@ import random
     resposta4 = [perguntas,3] == [respostas,3]
     resposta5 = [perguntas,4] == [respostas,4]
     
-    
+    pontos = 100
+    pontos_perdidos = 25
     
     print("Selecione um nível de dificuldade: ")
     print("(1) Fácil, (2) Médio, (3) Difícil")
@@ -35,22 +36,29 @@ import random
 
         print(pergunta_secreta)
         print(f"Alternativas: {respostas}")
-        print(f"Tentativa {rodada} de {total_de_tentativas}")
+        print(f"Tentativa {rodada} de {total_de_tentativas}, {pontos} pontos")
         chute = input("Insira a resposta: ")
         print("Resposta insetida: ")
         
         
         if(chute == resposta1):
-            print("Respostas correta")
+            print("Respostas correta e você fez {pontos} pontos")
+            break
         elif(chute == resposta2):
-            print("Respostas correta")
+            print("Respostas correta e você fez {pontos} pontos")
+            break
         elif(chute == resposta3):
-            print("Respostas correta")
+            print("Respostas correta e você fez {pontos} pontos")
+            break
         elif(chute == resposta4):
-            print("Respostas correta")
+            print("Respostas correta e você fez {pontos} pontos")
+            break
         elif(chute == resposta5):
-            print("Respostas correta")
+            print("Respostas correta e você fez {pontos} pontos")
+            break
         else:
             print("Resposta errada")
-         
-        
+            pontos = abs(pontos - pontos_perdidos)
+
+            
+    print("Fim de jogo")
