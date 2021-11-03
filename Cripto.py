@@ -1,43 +1,33 @@
 import random
 
+senha_escolhida = imput("Crie sua senha:")
 
-arquivo = open("senhas.txt", "r")
-senhas = []
-
-    for linha in arquio:
-        senhas.append(linha.strip())
+total_de_tentativas = 5
+locked = False
+acertou = False
+errou = 0
+palavra_acertada = ["_" for caractere in senha_escolhida]
+    
+print(palavra_acertada)
+    
+while(not locked and not acertou):
       
-    arquivo.close
-    
-    numero = random.randrange(0, len(senhas))
-    palavra_secreta = senhas[numero].upper()
-    
-    
-    total_de_tentativas = False
-    acertou = False
-    errou = 0
-    palavra_acertada = ["_" for letra in palavra_secreta]
-    
     print(palavra_acertada)
-    
-    while(not total_de_tentativas and not acertou):
-      
-        print(palavra_acertada)
-        chute = str(input("Digite uma letra ou numero: "))
-        chute = chute.strip().upper()
+    chute = str(input("Digite uma letra ou numero: "))
+    chute = chute.strip().upper()
             
-            if(chute in palavra_secreta):
-                sequencia = 0
-                for caractere in palavra_secreta:
-                    if(chute == caractere):
-                        palavra_acertada[sequencia] = caractere
-                    sequencia += 1
-            else:
-                errou += 1
+        if(chute in senha_escolhida):
+            sequencia = 0
+            for caractere in senha_escolhida:
+                if(chute == caractere):
+                    palavra_acertada[sequencia] = caractere
+                sequencia += 1
+        else:
+            errou -= 1
 
         
-            total_de_tentativas = errou == len(palavra_secreta)
-            acertou = "_" not in palavra acertada
+        locked = errou == total_de_tentativas == 0
+        acertou = "_" not in palavra_acertada
         
-            if(palavra_acertada == palavra_secreta)
-                print(palavra_secreta)
+        if(palavra_acertada == senha_escolhida)
+            print(senha_escolhida)
