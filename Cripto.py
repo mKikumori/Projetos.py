@@ -23,14 +23,14 @@ senhas = []
     while(not total_de_tentativas and not acertou):
       
         print(palavra_acertada)
-        chute = input("Digite uma letra:")
+        chute = str(input("Digite uma letra ou numero: "))
         chute = chute.strip().upper()
-
+            
             if(chute in palavra_secreta):
                 sequencia = 0
-                for letra in palavra_secreta:
-                    if(chute == letra):
-                        palavra_acertada[sequencia] = letra
+                for caractere in palavra_secreta:
+                    if(chute == caractere):
+                        palavra_acertada[sequencia] = caractere
                     sequencia += 1
             else:
                 errou += 1
