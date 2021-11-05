@@ -1,10 +1,10 @@
 
 #mostrar o cardapio
-#escolher uma bebida
 #escolher uma area do cardapio
 #escolhar um prato dentro da area escolhida
 #entregar o prato pedido
-
+#finalizar quando estiver satisfeito
+#pagar a conta
 
 
 
@@ -20,10 +20,12 @@ pratos_saladas = ["Prato1", "Prato2", "Prato3", "Prato4"]
 pratos_sobremesas = ["Prato1", "Prato2", "Prato3", "Prato4"]
 pratos_bebidas = ["Prato1", "Prato2", "Prato3", "Prato4"]
 
+
+finalizar_conta = False
 satisfeito = False
 print(cardapio)
 
-while(not satisfeito):
+while(not satisfeito and not finalizar_conta):
     pedido = imput("Qual sera seu pedido?")
         if(pedido == "Pastas"):
             print(pratos_pastas)
@@ -41,12 +43,19 @@ while(not satisfeito):
             print(pratos_bebidas)
             prato = imput("Qual sera seu prato?")
         else:
-            print("Voltarei quando tiver um pedido")
+            print("Trarei a conta")
+            finalizar_conta = True
             
             
-        
-            
-            
-            
+        if(finalizar_conta = True):
+            print(conta)
+            pagamento = int(imput("Valor entregue para pagar:"))
+            if(pagamento < conta):
+                print("Seu pagamento nao foi o suficiente")
+                continue
+            else:
+                troco = pagamento - conta
+                print(f"Troco de {troco} reais)
+                print("Volte sempre")
             
             
