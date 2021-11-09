@@ -9,12 +9,11 @@ pergunta_secreta = perguntas[numero].upper()
 
 respostas = ["Amida", "Cetona", "Amina", "Éster", "Éter"]
 
-resposta1 = [perguntas, 0] == [respostas, 0]
-resposta2 = [perguntas, 1] == [respostas, 1]
-resposta3 = [perguntas, 2] == [respostas, 2]
-resposta4 = [perguntas, 3] == [respostas, 3]
-resposta5 = [perguntas, 4] == [respostas, 4]
-
+resposta1 = "Amida"
+resposta2 = "Cetona"
+resposta3 = "Amina"
+resposta4 = "Éster"
+resposta5 = "Éter"
 pontos = 100
 pontos_perdidos = 20
 
@@ -37,25 +36,23 @@ for rodada in range(1, numero_de_tentativas + 1):
     print(f"Tentativa {rodada} de {numero_de_tentativas}, {pontos} pontos")
     chute = input("Insira a resposta: ")
     print(f"Resposta insetida: {chute}")
-
     if (chute == resposta1):
-        print("Respostas correta e você fez {pontos} pontos")
+        print(f"Respostas correta e você fez {pontos} pontos")
         break
     elif (chute == resposta2):
-        print("Respostas correta e você fez {pontos} pontos")
+        print(f"Respostas correta e você fez {pontos} pontos")
         break
     elif (chute == resposta3):
-        print("Respostas correta e você fez {pontos} pontos")
+        print(f"Respostas correta e você fez {pontos} pontos")
         break
     elif (chute == resposta4):
-        print("Respostas correta e você fez {pontos} pontos")
+        print(f"Respostas correta e você fez {pontos} pontos")
         break
     elif (chute == resposta5):
-        print("Respostas correta e você fez {pontos} pontos")
+        print(f"Respostas correta e você fez {pontos} pontos")
         break
     else:
         pontos = abs(pontos - pontos_perdidos)
-        pontos_finais = "0"
-        print(f"Resposta errada, {pontos_finais} pontos")
+        print(f"Resposta errada, {pontos} pontos")
 
 print("Fim de jogo")
