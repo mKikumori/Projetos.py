@@ -1,47 +1,39 @@
+import random
 
-senha_escolhida = input("Crie sua senha:")
+arquivo = open("palavras.txt", "r")
+senhas_fortes = []
+
+for linha in arquivo:
+    senhas_fortes.append(linha.strip())
+
+arquivo.close()
+
+numero = random.randrange(0, len(senhas_fortes))
+senha_final = senhas_fortes[numero].upper()
+
 
 locked = False
 time_out = False
 acertou = False
-palavra_acertada = ["_" for caractere in senha_escolhida]
+palavra_acertada = ["_" for caractere in senha_final]
 errou = 0
 
-print("Escolha o nivel de encriptacao")
-print("(1) Fácil, (2) Médio, (3) Difícil")
-numero_de_tentativas = int(input("Nivel: ")
-
-if(numero_de_tentativas == 1):
-    total_de_tentativas = 5
-elif(numero_de_tentativas == 2):
-    total_de_tentativas = 3
-elif(numero_de_tentatuvas == 3):
-    total_de_tentativas = 1
-                           
 print(palavra_acertada)
 
 while (not locked and not acertou):
 
-    chute = str(input("Digite uma letra ou numero: "))
+    chute = input("Digite uma letra ou numero: ")
     chute = chute.upper()
 
-    if (chute in senha_escolhida):
+    if (chute in senha_final):
         sequencia = 0
-        for caractere in senha_escolhida:
+        for caractere in senha_final:
             if (chute == caractere):
                 palavra_acertada[sequencia] = caractere
             sequencia += 1
     else:
         errou += 1
 
-    locked = errou == len(senha_escolhida)
+    locked = errou == len(senha_final)
     acertou = "_" not in palavra_acertada
     print(palavra_acertada)
-
-                           
-    if (locked = True):
-        total_de_tentativas -= 1
-            if (total_de_tentativas == 0):
-                print("Timed-out")
-                           
-print("Fim")
