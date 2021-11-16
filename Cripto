@@ -1,6 +1,6 @@
 import random
 
-arquivo = open("palavras.txt", "r")
+arquivo = open("senhas.txt", "r")
 senhas_fortes = []
 
 for linha in arquivo:
