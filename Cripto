@@ -13,7 +13,6 @@ senha_final = senhas_fortes[numero].upper()
 
 
 locked = False
-time_out = False
 acertou = False
 palavra_acertada = ["_" for caractere in senha_final]
 errou = 0
